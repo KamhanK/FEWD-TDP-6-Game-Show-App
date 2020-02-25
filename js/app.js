@@ -29,19 +29,16 @@ startButton.addEventListener('click', () => {
 
 function getRandomPhraseAsArray(arr){
     //do stuff to any arr that is passed in
-    // const emptyArray = [];
 
     const randomNumber = Math.floor(Math.random() * arr.length);
     const indexOfArray = arr[randomNumber];
-    console.log(indexOfArray);
+    // console.log(indexOfArray);
 
     const splitArray = indexOfArray.split('');
-    console.log(splitArray);
+    // console.log(splitArray);
 
-    // for ( let i = 0; i < splitArray.length; i += 1 ) {
-    //     emptyArray.push(splitArray[i]);
-    // }
-
+    return splitArray;
+    
 }
 
 console.log(getRandomPhraseAsArray(phrases));
