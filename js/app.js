@@ -9,7 +9,7 @@ const missed = 0;
 
 // Random Phrases Array
 
-const randomPhrases = [
+const phrases = [
     'To be or not to be',
     'Life is too short',
     'Life moves pretty fast',
@@ -31,7 +31,10 @@ function getRandomPhraseAsArray(arr){
     //do stuff to any arr that is passed in
     const randomNumber = Math.floor(Math.random() * arr.length);
     return randomNumber;
+    const indexOfArray = arr[randomNumber];
+    console.log(indexOfArray);
+
 }
 
-console.log(getRandomPhraseAsArray(randomPhrases));
+console.log(getRandomPhraseAsArray(phrases));
 
