@@ -1,4 +1,3 @@
-
 /* Variables */
 
 const qwerty = document.getElementById('qwerty');
