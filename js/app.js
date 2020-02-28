@@ -6,6 +6,7 @@ const phrase = document.getElementById('phrase');
 const startButton = document.getElementById('start_btn');
 const overlay = document.getElementById('overlay');
 const missed = 0;
+const ul = document.getElementById('phrase').firstElementChild;
 
 // Random Phrases Array
 
@@ -50,10 +51,15 @@ function addPhraseToDisplay(arr){
 
     for(i = 0; i < arr.length; i += 1) {
         const li = document.createElement('li');
-        const ul = document.getElementById('phrase');
-        li = arr[i];
-        ul.appendChild(li);
+        li.textContent = arr[i];
+        if (arr[i] !== ' '){
+            li.classList.add('letter');
+        } else if (arr[i] == ' '){
+            li.classList.add('space');
+        }
+
         console.log(li);
+        ul.appendChild('li');
 
     }
 }
