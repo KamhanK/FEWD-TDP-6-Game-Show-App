@@ -38,8 +38,25 @@ function getRandomPhraseAsArray(arr){
     // console.log(splitArray);
 
     return splitArray;
-    
+
 }
 
-console.log(getRandomPhraseAsArray(phrases));
+// console.log(getRandomPhraseAsArray(phrases));
+
+// Adds the letters of a string to a the display
+
+function addPhraseToDisplay(arr){
+    // do stuff any arr that is passed in, and add to `#phrase ul`
+
+    for(i = 0; i < arr.length; i += 1) {
+        const li = document.createElement('li');
+        const ul = document.getElementById('phrase');
+        li = arr[i];
+        ul.appendChild(li);
+        console.log(li);
+
+    }
+}
+
+console.log(addPhraseToDisplay(phrases));
 
