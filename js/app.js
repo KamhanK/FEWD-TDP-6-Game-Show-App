@@ -57,8 +57,8 @@ function addPhraseToDisplay(arr){
             li.classList.add('space');
         }
 
-        console.log(li);
         ul.appendChild(li);
+        console.log(li);
 
     }
 }
