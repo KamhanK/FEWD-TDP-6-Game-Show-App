@@ -59,7 +59,7 @@ function addPhraseToDisplay(arr){
         }
 
         console.log(li);
-        ul.appendChild('li');
+        ul.appendChild(li);
 
     }
 }
