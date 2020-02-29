@@ -63,5 +63,6 @@ function addPhraseToDisplay(arr){
     }
 }
 
-console.log(addPhraseToDisplay(phrases));
+const phraseArray = getRandomPhraseAsArray(phrases);
+addPhraseToDisplay(phraseArray);
 
