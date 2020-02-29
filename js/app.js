@@ -76,7 +76,7 @@ function checkLetter(button) {
             matchingLetter = letter[i];
             matchingLetter.classList.add('show');
         }
-        
+        console.log(letter[i]);
         return matchingLetter;
     }
  }
