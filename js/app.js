@@ -43,7 +43,7 @@ function getRandomPhraseAsArray(arr){
 
 // console.log(getRandomPhraseAsArray(phrases));
 
-// Adds the letters of a string to a the display
+// Adds the letters of a string to the display
 
 function addPhraseToDisplay(arr){
     // do stuff any arr that is passed in, and add to `#phrase ul`
