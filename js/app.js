@@ -75,24 +75,24 @@ function checkLetter(button) {
         if(letter[i].textContent === button.textContent){
             matchingLetter = letter[i];
             matchingLetter.classList.add('show');
-        } else {
-            matchingLetter = null;
         }
+        
+        return matchingLetter;
     }
-
-    console.log(matchingLetter);
-    return matchingLetter;
+ }
     
-}
-
 qwerty.addEventListener('click', () => {
     const button = event.target;
     if (button.tagName === 'button'){
         button.classList.add('chosen');
-
-    } if(button.className === 'chosen'){
+    }
+    
+    if(button.className === 'chosen'){
         button.disabled = true;
     }
     
+    const letterFound = checkLetter(button);
+
+    return letterFound;
 });
 
