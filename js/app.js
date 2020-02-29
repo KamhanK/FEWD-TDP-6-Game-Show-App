@@ -72,13 +72,13 @@ function checkLetter(button) {
     const letter = document.getElementsByClassName('letter');
     let matchingLetter = null;
     for(i = 0; i < letter.length; i += 1) {
-        if(letter[i].textContent.toLowerCase() === button.textContent){
+        if(letter[i].textContent.toLowerCase() === button.textContent.toLowerCase()){
             matchingLetter = letter[i];
             matchingLetter.classList.add('show');
-        }
-        console.log(matchingLetter);
-        return matchingLetter;
+        }   
     }
+    console.log(matchingLetter);
+        return matchingLetter;
  }
     
 qwerty.addEventListener('click', (event) => {
