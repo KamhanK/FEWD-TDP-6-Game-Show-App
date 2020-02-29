@@ -48,7 +48,7 @@ function getRandomPhraseAsArray(arr) {
 function addPhraseToDisplay(arr) {
     // do stuff to any arr that is passed in, and add to `#phrase ul`
 
-    for (i = 0; i < arr.length; i += 1) {
+    for(i = 0; i < arr.length; i += 1) {
         const li = document.createElement('LI');
         li.textContent = arr[i];
         if (arr[i] !== ' '){
