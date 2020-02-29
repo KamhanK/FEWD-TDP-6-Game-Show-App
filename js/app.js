@@ -4,8 +4,8 @@ const qwerty = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
 const startButton = document.getElementById('start_btn');
 const overlay = document.getElementById('overlay');
-const missed = 0;
 const ul = document.getElementById('phrase').firstElementChild;
+const missed = 0;
 
 // Random Phrases Array
 
@@ -27,7 +27,7 @@ startButton.addEventListener('click', () => {
 
 // Return a random phrase from an array
 
-function getRandomPhraseAsArray(arr){
+function getRandomPhraseAsArray(arr) {
     //do stuff to any arr that is passed in
 
     const randomNumber = Math.floor(Math.random() * arr.length);
@@ -45,8 +45,8 @@ function getRandomPhraseAsArray(arr){
 
 // Adds the letters of a string to the display
 
-function addPhraseToDisplay(arr){
-    // do stuff any arr that is passed in, and add to `#phrase ul`
+function addPhraseToDisplay(arr) {
+    // do stuff to any arr that is passed in, and add to `#phrase ul`
 
     for(i = 0; i < arr.length; i += 1) {
         const li = document.createElement('li');
@@ -65,4 +65,34 @@ function addPhraseToDisplay(arr){
 
 const phraseArray = getRandomPhraseAsArray(phrases);
 addPhraseToDisplay(phraseArray);
+
+// Check if a letter is in the phrase
+
+function checkLetter(button) {
+    const letter = document.getElementsByClassName('letter');
+    const matchingLetter = null;
+    for(i = 0; i < letter.length; i += 1) {
+        if(letter[i].textContent === button.textContent){
+            matchingLetter = letter[i];
+            matchingLetter.classList.add('show');
+        } else {
+            matchingLetter = null;
+        }
+    }
+
+    console.log(matchingLetter);
+    return matchingLetter;
+    
+}
+
+qwerty.addEventListener('click', () => {
+    const button = event.target;
+    if (button.tagName === 'button'){
+        button.classList.add('chosen');
+
+    } if(button.className === 'chosen'){
+        button.disabled = true;
+    }
+    
+});
 
