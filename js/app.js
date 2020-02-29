@@ -49,7 +49,7 @@ function addPhraseToDisplay(arr) {
     // do stuff to any arr that is passed in, and add to `#phrase ul`
 
     for(i = 0; i < arr.length; i += 1) {
-        const li = document.createElement('li');
+        const li = document.createElement('LI');
         li.textContent = arr[i];
         if (arr[i] !== ' '){
             li.classList.add('letter');
@@ -70,9 +70,9 @@ addPhraseToDisplay(phraseArray);
 
 function checkLetter(button) {
     const letter = document.getElementsByClassName('letter');
-    const matchingLetter = null;
+    let matchingLetter = null;
     for(i = 0; i < letter.length; i += 1) {
-        if(letter[i].textContent === button.textContent){
+        if(letter[i].textContent.toLowerCase() === button.textContent){
             matchingLetter = letter[i];
             matchingLetter.classList.add('show');
         }
@@ -81,18 +81,16 @@ function checkLetter(button) {
     }
  }
     
-qwerty.addEventListener('click', () => {
+qwerty.addEventListener('click', (event) => {
     const button = event.target;
-    if (button.tagName === 'button'){
+    if (button.tagName === 'BUTTON'){
         button.classList.add('chosen');
     }
-    
     if(button.className === 'chosen'){
         button.disabled = true;
     }
     
     const letterFound = checkLetter(button);
 
-    return letterFound;
 });
 
