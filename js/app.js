@@ -76,7 +76,7 @@ function checkLetter(button) {
             matchingLetter = letter[i];
             matchingLetter.classList.add('show');
         }
-        console.log(letter[i]);
+        console.log(matchingLetter);
         return matchingLetter;
     }
  }
@@ -86,7 +86,7 @@ qwerty.addEventListener('click', (event) => {
     if (button.tagName === 'BUTTON'){
         button.classList.add('chosen');
     }
-    if(button.className === 'chosen'){
+    if (button.className === 'chosen'){
         button.disabled = true;
     }
     
