@@ -91,6 +91,10 @@ function checkWin () {
     }
 }
 
+// Reset the game
+
+
+
 // Listen for the onscreen keyboard to be clicked
 
 qwerty.addEventListener('click', (event) => {
