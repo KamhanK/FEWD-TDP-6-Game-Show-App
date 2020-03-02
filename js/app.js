@@ -5,6 +5,7 @@ const phrase = document.getElementById('phrase');
 const startButton = document.getElementById('start_btn');
 const overlay = document.getElementById('overlay');
 const ul = document.getElementById('phrase').firstElementChild;
+const title = document.getElementsByClassName('title');
 let missed = 0;
 
 // Random Phrases Array
@@ -87,7 +88,10 @@ function checkWin () {
     const letter = document.getElementsByClassName('letter');
     const show = document.getElementsByClassName('show');
     if (letter.length === show.length){
-        overlay.style.display = '';
+        console.log(letter);
+        console.log(show);
+        overlay.classList.add('win');
+        overlay.children[0].textContent = 'You Won';
     }
 }
 
@@ -106,17 +110,17 @@ qwerty.addEventListener('click', (event) => {
     if (letterFound === null) {
         missed += 1;
         console.log(missed);
+        const tries = document.getElementsByClassName('tries');
+        for(i = 4; i >= 0; i-- ){
+            if(tries[i].children[0].src.includes('images/liveHeart.png')){
+                tries[i].children[0].src = 'images/lostHeart.png';
+                break;
+            }
+        
+        }
     }
 
-    const tries = document.getElementsByClassName('tries');
-    for(i = 4; i >= 0; i-- ){
-        if(tries[i].children[0].src.includes('images/liveHeart.png')){
-            tries[i].children[0].src = 'images/lostHeart.png';
-            break;
-        }
-        
-    }
-    
+    checkWin();
 
 });
 
