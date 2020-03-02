@@ -5,7 +5,7 @@ const phrase = document.getElementById('phrase');
 const startButton = document.getElementById('start_btn');
 const overlay = document.getElementById('overlay');
 const ul = document.getElementById('phrase').firstElementChild;
-const missed = 0;
+let missed = 0;
 
 // Random Phrases Array
 
@@ -80,7 +80,9 @@ function checkLetter(button) {
     console.log(matchingLetter);
         return matchingLetter;
  }
-    
+
+// Listen for the onscreen keyboard to be clicked
+
 qwerty.addEventListener('click', (event) => {
     const button = event.target;
     if (button.tagName === 'BUTTON'){
@@ -91,6 +93,20 @@ qwerty.addEventListener('click', (event) => {
     }
     
     const letterFound = checkLetter(button);
+    if (letterFound === null) {
+        missed += 1;
+        console.log(missed);
+    }
+
+    const tries = document.getElementsByClassName('tries');
+    for(i = 4; i >= 0; i-- ){
+        if(tries[i].children[0].src.includes('images/liveHeart.png')){
+            tries[i].children[0].src = 'images/lostHeart.png';
+            break;
+        }
+        
+    }
+    
 
 });
 
