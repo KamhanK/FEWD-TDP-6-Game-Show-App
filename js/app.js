@@ -81,6 +81,16 @@ function checkLetter(button) {
         return matchingLetter;
  }
 
+// Check if the game has been won or lost
+
+function checkWin () {
+    const letter = document.getElementsByClassName('letter');
+    const show = document.getElementsByClassName('show');
+    if (letter.length === show.length){
+        overlay.style.display = '';
+    }
+}
+
 // Listen for the onscreen keyboard to be clicked
 
 qwerty.addEventListener('click', (event) => {
@@ -109,4 +119,6 @@ qwerty.addEventListener('click', (event) => {
     
 
 });
+
+
 
