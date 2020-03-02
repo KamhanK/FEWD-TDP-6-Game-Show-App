@@ -51,6 +51,8 @@ function addPhraseToDisplay(arr) {
     }
 }
 
+// Call the getRandomPhraseAsArray() function
+
 const phraseArray = getRandomPhraseAsArray(phrases);
 addPhraseToDisplay(phraseArray);
 
