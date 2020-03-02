@@ -116,7 +116,6 @@ qwerty.addEventListener('click', (event) => {
                 tries[i].children[0].src = 'images/lostHeart.png';
                 break;
             }
-        
         }
     }
 
