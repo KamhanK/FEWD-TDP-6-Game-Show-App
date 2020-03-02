@@ -33,14 +33,12 @@ function getRandomPhraseAsArray(arr) {
     const indexOfArray = arr[randomNumber];
     const splitArray = indexOfArray.split('');
     return splitArray;
-
 }
 
 // Adds the letters of a string to the display
 
 function addPhraseToDisplay(arr) {
     // do stuff to any arr that is passed in, and add to `#phrase ul`
-
     for(i = 0; i < arr.length; i += 1) {
         const li = document.createElement('LI');
         li.textContent = arr[i];
@@ -50,7 +48,6 @@ function addPhraseToDisplay(arr) {
             li.classList.add('space');
         }
         ul.appendChild(li);
-
     }
 }
 
