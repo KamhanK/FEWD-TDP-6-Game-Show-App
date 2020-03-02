@@ -83,7 +83,8 @@ function checkWin () {
         overlay.children[1].textContent = 'Play Again';
         overlay.style.display = 'flex';
     } else if (missed >= 5) {
-        overlay.style.display = 'lose';
+        overlay.style.display = '';
+        overlay.classList.add('lose');
         overlay.children[0].textContent = 'You Lost';
         overlay.children[1].textContent = 'Play Again';
         overlay.style.display = 'flex';
