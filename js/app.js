@@ -5,7 +5,6 @@ const phrase = document.getElementById('phrase');
 const startButton = document.getElementById('start_btn');
 const overlay = document.getElementById('overlay');
 const ul = document.getElementById('phrase').firstElementChild;
-const title = document.getElementsByClassName('title');
 let missed = 0;
 
 // Random Phrases Array
@@ -30,19 +29,12 @@ startButton.addEventListener('click', () => {
 
 function getRandomPhraseAsArray(arr) {
     //do stuff to any arr that is passed in
-
     const randomNumber = Math.floor(Math.random() * arr.length);
     const indexOfArray = arr[randomNumber];
-    // console.log(indexOfArray);
-
     const splitArray = indexOfArray.split('');
-    // console.log(splitArray);
-
     return splitArray;
 
 }
-
-// console.log(getRandomPhraseAsArray(phrases));
 
 // Adds the letters of a string to the display
 
@@ -57,9 +49,7 @@ function addPhraseToDisplay(arr) {
         } else if (arr[i] == ' '){
             li.classList.add('space');
         }
-
         ul.appendChild(li);
-        console.log(li);
 
     }
 }
@@ -78,7 +68,6 @@ function checkLetter(button) {
             matchingLetter.classList.add('show');
         }   
     }
-    console.log(matchingLetter);
         return matchingLetter;
  }
 
@@ -87,11 +76,17 @@ function checkLetter(button) {
 function checkWin () {
     const letter = document.getElementsByClassName('letter');
     const show = document.getElementsByClassName('show');
-    if (letter.length === show.length){
-        console.log(letter);
-        console.log(show);
+    if (letter.length === show.length) {
+        overlay.style.display = '';
         overlay.classList.add('win');
         overlay.children[0].textContent = 'You Won';
+        overlay.children[1].textContent = 'Play Again';
+        overlay.style.display = 'flex';
+    } else if (missed >= 5) {
+        overlay.style.display = 'lose';
+        overlay.children[0].textContent = 'You Lost';
+        overlay.children[1].textContent = 'Play Again';
+        overlay.style.display = 'flex';
     }
 }
 
@@ -105,7 +100,7 @@ qwerty.addEventListener('click', (event) => {
     if (button.className === 'chosen'){
         button.disabled = true;
     }
-    
+
     const letterFound = checkLetter(button);
     if (letterFound === null) {
         missed += 1;
