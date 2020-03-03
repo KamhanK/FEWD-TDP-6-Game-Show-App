@@ -42,9 +42,9 @@ function addPhraseToDisplay(arr) {
     for(i = 0; i < arr.length; i += 1) {
         const li = document.createElement('LI');
         li.textContent = arr[i];
-        if (arr[i] !== ' '){
+        if (arr[i] !== ' ') {
             li.classList.add('letter');
-        } else if (arr[i] == ' '){
+        } else if (arr[i] == ' ') {
             li.classList.add('space');
         }
         ul.appendChild(li);
@@ -98,10 +98,10 @@ function checkWin () {
 
 qwerty.addEventListener('click', (event) => {
     const button = event.target;
-    if (button.tagName === 'BUTTON'){
+    if (button.tagName === 'BUTTON') {
         button.classList.add('chosen');
     }
-    if (button.className === 'chosen'){
+    if (button.className === 'chosen') {
         button.disabled = true;
     }
 
@@ -110,8 +110,8 @@ qwerty.addEventListener('click', (event) => {
         missed += 1;
         console.log(missed);
         const tries = document.getElementsByClassName('tries');
-        for(i = 4; i >= 0; i-- ){
-            if(tries[i].children[0].src.includes('images/liveHeart.png')){
+        for(i = 4; i >= 0; i-- ) {
+            if(tries[i].children[0].src.includes('images/liveHeart.png')) {
                 tries[i].children[0].src = 'images/lostHeart.png';
                 break;
             }
