@@ -99,19 +99,25 @@ function resetGame() {
         overlay.classList.remove('win');
         overlay.classList.remove('lose');
         const button = document.getElementsByTagName('button');
-        for(i = 0; i < button.length; i += 1){
-            if (button.className === 'chosen') {
-                button.classList.remove('chosen');
-            }
-            if (button.disabled === 'true') {
-                button.disabled = false;
+        for(i = 0; i < button.length; i += 1) {
+            if (button[i].className === 'chosen') {
+                button[i].classList.remove('chosen');
+                button[i].disabled = false;
             }
         }
+        ul.firstChild;
+        // const tries = document.getElementsByClassName('tries');
+        // if (missed === 0) {
+        //     for(i = 4; i >= 0; i-- ) {
+        //         if(tries[i].children[0].src.includes('images/images/lostHeart.png')) {
+        //             tries[i].children[0].src = 'images/liveHeart.png';
+        //             break;
+        //         }
+        //     }
+        // }
+        missed = 0;
+        console.log(missed);
         
-        
-        console.log(button.length);
-        // addPhraseToDisplay(phraseArray);
-        // missed = 0;
     });
 }
 
