@@ -127,7 +127,6 @@ qwerty.addEventListener('click', (event) => {
     const button = event.target;
     if (button.tagName === 'BUTTON') {
         button.classList.add('chosen');
-    }
     if (button.className === 'chosen') {
         button.disabled = true;
     }
@@ -142,9 +141,10 @@ qwerty.addEventListener('click', (event) => {
             }
         }
     }
+}
 
     checkWin();
-
+    
 });
 
 
