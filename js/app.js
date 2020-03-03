@@ -98,9 +98,18 @@ function resetGame() {
     startButton.addEventListener('click', () => {
         overlay.classList.remove('win');
         overlay.classList.remove('lose');
-        if (button.tagName === 'BUTTON') {
-            button.classList.remove('chosen');
+        const button = document.getElementsByTagName('button');
+        for(i = 0; i < button.length; i += 1){
+            if (button.className === 'chosen') {
+                button.classList.remove('chosen');
+            }
+            if (button.disabled === 'true') {
+                button.disabled = false;
+            }
         }
+        
+        
+        console.log(button.length);
         // addPhraseToDisplay(phraseArray);
         // missed = 0;
     });
