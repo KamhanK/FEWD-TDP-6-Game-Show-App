@@ -88,9 +88,16 @@ function checkWin () {
         overlay.children[1].textContent = 'Play Again';
         overlay.style.display = 'flex';
     }
+
+    // Reset the game
+
+    startButton.addEventListener('click', () => {
+        overlay.classList.remove('win');
+        overlay.classList.remove('lose');
+    });
 }
 
-// Reset the game
+
 
 
 
