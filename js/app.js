@@ -105,27 +105,19 @@ function resetGame() {
                 button[i].disabled = false;
             }
         }
-        
-        const ul = document.getElementsByTagName('ul');
-        const li = document.getElementsByTagName('li');
-        console.log(ul);
-        // for(i = 0; i < ul.length; i += 1) {
-            ul.removeChild('li');
-        // }
-
-        
-        // const tries = document.getElementsByClassName('tries');
-        // if (missed === 0) {
-        //     for(i = 4; i >= 0; i-- ) {
-        //         if(tries[i].children[0].src.includes('images/lostHeart.png')) {
-        //             tries[i].children[0].src = 'images/liveHeart.png';
-        //             break;
-        //         }
-        //     }
-        // }
+        ul.innerHTML = '';
+        const phraseArray = getRandomPhraseAsArray(phrases);
+        addPhraseToDisplay(phraseArray);
         missed = 0;
-        console.log(missed);
-        
+        const tries = document.getElementsByClassName('tries');
+        if (missed === 0) {
+            for(i = 0; i <= 4; i += 1 ) {
+                if(tries[i].children[0].src.includes('images/lostHeart.png')) {
+                    tries[i].children[0].src = 'images/liveHeart.png';
+                    break;
+                }
+            }
+        }
     });
 }
 
@@ -139,13 +131,11 @@ qwerty.addEventListener('click', (event) => {
     if (button.className === 'chosen') {
         button.disabled = true;
     }
-
     const letterFound = checkLetter(button);
     if (letterFound === null) {
         missed += 1;
-        console.log(missed);
         const tries = document.getElementsByClassName('tries');
-        for(i = 4; i >= 0; i-- ) {
+        for(i = 4; i >= 0; i -= 1 ) {
             if(tries[i].children[0].src.includes('images/liveHeart.png')) {
                 tries[i].children[0].src = 'images/lostHeart.png';
                 break;
