@@ -105,11 +105,19 @@ function resetGame() {
                 button[i].disabled = false;
             }
         }
-        ul.firstChild;
+        
+        const ul = document.getElementsByTagName('ul');
+        const li = document.getElementsByTagName('li');
+        console.log(ul);
+        // for(i = 0; i < ul.length; i += 1) {
+            ul.removeChild('li');
+        // }
+
+        
         // const tries = document.getElementsByClassName('tries');
         // if (missed === 0) {
         //     for(i = 4; i >= 0; i-- ) {
-        //         if(tries[i].children[0].src.includes('images/images/lostHeart.png')) {
+        //         if(tries[i].children[0].src.includes('images/lostHeart.png')) {
         //             tries[i].children[0].src = 'images/liveHeart.png';
         //             break;
         //         }
