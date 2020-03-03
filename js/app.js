@@ -88,18 +88,23 @@ function checkWin () {
         overlay.children[1].textContent = 'Play Again';
         overlay.style.display = 'flex';
     }
+    
+    resetGame();
+}
 
-    // Reset the game
+// Reset the game
 
+function resetGame() {
     startButton.addEventListener('click', () => {
         overlay.classList.remove('win');
         overlay.classList.remove('lose');
+        if (button.tagName === 'BUTTON') {
+            button.classList.remove('chosen');
+        }
+        // addPhraseToDisplay(phraseArray);
+        // missed = 0;
     });
 }
-
-
-
-
 
 // Listen for the onscreen keyboard to be clicked
 
