@@ -16,7 +16,7 @@
   --transition: all .2s ease-in-out;
 }
 
-/* Main */
+/* Global Styles */
 
 * {
   box-sizing: border-box;
@@ -28,6 +28,8 @@ body {
   display: flex;
   height: 100vh;
 }
+
+/* Main */
 
 li, ol, ul {
   padding: 0;
