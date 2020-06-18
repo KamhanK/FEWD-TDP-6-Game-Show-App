@@ -1,6 +1,6 @@
 # Techdegree Project 6 - Game Show App
 
-**Skills Used:**
+**Skills & Technologies Used:**
 
 - HTML
 - CSS
